@@ -17,7 +17,7 @@
 uint16_t  global_prescale ;
 uint16_t global_prescale1 ;
 uint16_t global_prescale2 ;
-volatile uint16_t global_input_0 ;
+volatile uint32_t global_input_0 ;
 uint16_t prescalerValue =  1;
 
 volatile uint8_t duty_high ;
