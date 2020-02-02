@@ -21,6 +21,7 @@ int main(void)
 {
 	uint16_t Distance ;
 	//////////// icu ////////////////////
+	
 	///// enable global interrupt 
 	SREG |=0x80;
 		/////external interrupt1 pin 
@@ -45,18 +46,25 @@ int main(void)
 	
 	//////////motor///////////////
 	
+	/// set direction
 	MotorDC_Init(MOT_1);
 	MotorDC_Init(MOT_2);
 	
 	MotorDC_Dir(MOT_1,FORWARD);
 	MotorDC_Dir(MOT_2,FORWARD);
 	
-	//MotorDC_Speed_HwPWM(20);
+	/// set speed 
+	
 	MotorDC_Speed_HwPWM(50) ;
-    /* Replace with your application code */
+    
     while (1) 
     {
+		// read the distance between the car and any obstacle infront of it 
+		
 		Distance = ultrasonic_init ();
+		
+		/// if the distance between the object and the car less than 5 cm the car stops 
+		
 		if( Distance<= 5 ){
 			
 			MotorDC_Dir(MOT_1,STOP);

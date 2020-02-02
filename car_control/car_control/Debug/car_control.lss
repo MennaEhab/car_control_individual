@@ -586,10 +586,10 @@ void Led_Init(En_LedNumber_t en_led_id)
  38e:	08 95       	ret
 
 00000390 <main>:
-int main(void)
 {
 	uint16_t Distance ;
 	//////////// icu ////////////////////
+	
 	///// enable global interrupt 
 	SREG |=0x80;
  390:	8f b7       	in	r24, 0x3f	; 63
@@ -642,6 +642,7 @@ int main(void)
 	
 	//////////motor///////////////
 	
+	/// set direction
 	MotorDC_Init(MOT_1);
  3da:	80 e0       	ldi	r24, 0x00	; 0
  3dc:	0e 94 49 00 	call	0x92	; 0x92 <MotorDC_Init>
@@ -658,15 +659,21 @@ int main(void)
  3f0:	81 e0       	ldi	r24, 0x01	; 1
  3f2:	0e 94 8c 00 	call	0x118	; 0x118 <MotorDC_Dir>
 	
-	//MotorDC_Speed_HwPWM(20);
+	/// set speed 
+	
 	MotorDC_Speed_HwPWM(50) ;
  3f6:	82 e3       	ldi	r24, 0x32	; 50
  3f8:	0e 94 df 00 	call	0x1be	; 0x1be <MotorDC_Speed_HwPWM>
-    /* Replace with your application code */
+    
     while (1) 
     {
+		// read the distance between the car and any obstacle infront of it 
+		
 		Distance = ultrasonic_init ();
  3fc:	0e 94 e7 03 	call	0x7ce	; 0x7ce <ultrasonic_init>
+		
+		/// if the distance between the object and the car less than 5 cm the car stops 
+		
 		if( Distance<= 5 ){
  400:	06 97       	sbiw	r24, 0x06	; 6
  402:	48 f4       	brcc	.+18     	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
