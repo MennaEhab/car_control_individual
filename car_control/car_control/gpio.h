@@ -52,20 +52,21 @@ typedef enum EN_bits_t
  * 				- 0x00 -> Input
  * 				- 0xff -> Output
  */
-void gpioPortDirection(uint8_t u8_port, uint8_t u8_direction);
+extern void gpioPortDirection(uint8_t u8_port, uint8_t u8_direction);
 
 /**
- * Description: set the port value (which is PORT register)
- * @param port: portID and takes the following values
- * 				- 0 -> GPIOA
- * 				- 1 -> GPIOB
- * 				- 2 -> GPIOC
- * 				- 3 -> GPIOD
- * @param value: set the port value and takes the following values
- * 				- 0x00 -> Low
- * 				- 0xff -> High
- */
-void gpioPortWrite(uint8_t u8_port, uint8_t u8_value);
+* Description: set the port value (which is PORT register)
+* @param port: portID and takes the following values
+* 				- 0 -> GPIOA
+* 				- 1 -> GPIOB
+* 				- 2 -> GPIOC
+* 				- 3 -> GPIOD
+* @param value: set the port value and takes the following values
+* 				- 0x00 -> Low
+* 				- 0xff -> High
+*/
+
+extern void gpioPortWrite(uint8_t u8_port, uint8_t u8_value);
 
 /**
  * Description: toggle the port value (which is PORT register)
@@ -75,7 +76,7 @@ void gpioPortWrite(uint8_t u8_port, uint8_t u8_value);
  * 				- 2 -> GPIOC
  * 				- 3 -> GPIOD
  */
-void gpioPortToggle(uint8_t u8_port);
+extern void gpioPortToggle(uint8_t u8_port);
 
 /**
  * Description: read the current port value
@@ -86,7 +87,7 @@ void gpioPortToggle(uint8_t u8_port);
  * 				- 3 -> GPIOD
  * @return
  */
-uint8_t gpioPortRead(uint8_t u8_port);
+extern uint8_t gpioPortRead(uint8_t u8_port);
 
 /*===========================PIN Control===============================*/
 /**
@@ -112,7 +113,7 @@ uint8_t gpioPortRead(uint8_t u8_port);
  * 				- 0x00 -> Input
  * 				- 0xff -> Output
  */
-void gpioPinDirection(uint8_t u8_port, uint8_t u8_pins, uint8_t u8_direction);
+extern void gpioPinDirection(uint8_t u8_port, uint8_t u8_pins, uint8_t u8_direction);
 
 /**
  * Description: set selected pins (more than one pin [ORed]) values
@@ -133,7 +134,7 @@ void gpioPinDirection(uint8_t u8_port, uint8_t u8_pins, uint8_t u8_direction);
  * 				- BIT7
  * @param value
  */
-void gpioPinWrite(uint8_t u8_port, uint8_t u8_pins, uint8_t u8_value);
+extern void gpioPinWrite(uint8_t u8_port, uint8_t u8_pins, uint8_t u8_value);
 
 /**
  * Description: toggle selected pin (only one pin) direction
@@ -153,7 +154,7 @@ void gpioPinWrite(uint8_t u8_port, uint8_t u8_pins, uint8_t u8_value);
  * 				- BIT6
  * 				- BIT7
  */
-void gpioPinToggle(uint8_t u8_port, uint8_t u8_pins);
+extern void gpioPinToggle(uint8_t u8_port, uint8_t u8_pins);
 
 /**
  * Description: read selected pin (only one pin) direction
@@ -175,7 +176,7 @@ void gpioPinToggle(uint8_t u8_port, uint8_t u8_pins);
  * 				- BIT7
  * @return
  */
-uint8_t gpioPinRead(uint8_t u8_port, uint8_t u8_pin);
+extern uint8_t gpioPinRead(uint8_t u8_port, uint8_t u8_pin);
 
 
 

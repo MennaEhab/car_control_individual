@@ -19,6 +19,7 @@
 
 int main(void)
 {
+	uint16_t Distance ;
 	//////////// icu ////////////////////
 	///// enable global interrupt 
 	SREG |=0x80;
@@ -55,7 +56,18 @@ int main(void)
     /* Replace with your application code */
     while (1) 
     {
-		ultrasonic_init ();
+		Distance = ultrasonic_init ();
+		if( Distance<= 5 ){
+			
+			MotorDC_Dir(MOT_1,STOP);
+			MotorDC_Dir(MOT_2,STOP);
+		}else {
+			MotorDC_Dir(MOT_1,FORWARD);
+			MotorDC_Dir(MOT_2,FORWARD);
+			
+		}
+		
+		
     }
 }
 

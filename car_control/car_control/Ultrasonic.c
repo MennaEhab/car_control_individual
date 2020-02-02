@@ -9,7 +9,7 @@
 #include "Ultrasonic.h"
 #define  tickTimeUs 16
 
-void ultrasonic_init(){
+uint16_t ultrasonic_init(){
 	
 	uint16_t Distance ;
 	//trigger
@@ -29,7 +29,7 @@ void ultrasonic_init(){
 	
 	timer2DelayMs(60);
 	
-	 
+	 return Distance ;
 }
 
 uint16_t calculate(){

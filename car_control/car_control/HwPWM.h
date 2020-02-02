@@ -10,6 +10,7 @@
 
 #include "timers.h"
 
-void HwPWMInit(void);
-void HwPWMSetDuty(uint8_t a_u8_duty, uint32_t a_u32_frequency);
+extern void HwPWMInit(void);
+
+extern void HwPWMSetDuty(uint8_t a_u8_duty, uint32_t a_u32_frequency);
 #endif /* HWPWM_H_ */

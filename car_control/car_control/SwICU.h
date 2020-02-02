@@ -31,21 +31,22 @@ typedef enum EN_SwICU_Edge_t{
 	SwICU_EdgeRisiging 
 }EN_SwICU_Edge_t;
 //int timer and interrupt
-void SwICU_Init(EN_SwICU_Edge_t a_en_inputCaptureEdge);
+extern void SwICU_Init(EN_SwICU_Edge_t a_en_inputCaptureEdge);
 //EN_SwICU_Edge_t SwICU_GetCfgEdge(void);
 
 //change triger
 
-void SwICU_SetCfgEdge(EN_SwICU_Edge_t a_en_inputCaptureEdgeedge);
+extern void SwICU_SetCfgEdge(EN_SwICU_Edge_t a_en_inputCaptureEdgeedge);
 
 //read th TCNT
 
-void SwICU_Read(volatile uint8_t * a_pu8_capt);
+extern void SwICU_Read(volatile uint8_t * a_pu8_capt);
 
 //stop timer
 
-void SwICU_Stop(void);
-void SwICU_Start(void);
+extern void SwICU_Stop(void);
+
+extern void SwICU_Start(void);
 /*
 void SwICU_Enable(void);
 void SwICU_Disable(void);

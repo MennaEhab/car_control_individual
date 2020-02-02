@@ -109,46 +109,46 @@ typedef enum En_timer2Interrupt_t{
  * @param outputCompare
  * @param interruptMask
  */
-void timer0Init(En_timer0Mode_t en_mode,En_timer0OC_t en_OC0,En_timer0perscaler_t en_prescal, uint8_t u8_initialValue, uint8_t u8_outputCompare, En_timer0Interrupt_t en_interruptMask);
+extern void timer0Init(En_timer0Mode_t en_mode,En_timer0OC_t en_OC0,En_timer0perscaler_t en_prescal, uint8_t u8_initialValue, uint8_t u8_outputCompare, En_timer0Interrupt_t en_interruptMask);
 
 /**
  * Description:
  * @param value
  */
-void timer0Set(uint8_t u8_value);
+extern void timer0Set(uint8_t u8_value);
 
 /**
  * Description:
  * @return
  */
-uint8_t timer0Read(void);
+extern uint8_t timer0Read(void);
 
 /**
  * Description:
  */
-void timer0Start(void);
+extern void timer0Start(void);
 
 /**
  * Description:
  */
-void timer0Stop(void);
+extern void timer0Stop(void);
 
 /**
  * Description:
  * @param delay
  */
-void timer0DelayMs(uint16_t u16_delay_in_ms);
+extern void timer0DelayMs(uint16_t u16_delay_in_ms);
 
 /*
  * user defined
  */
-void timer0DelayUs(uint32_t u32_delay_in_us);
+extern void timer0DelayUs(uint32_t u32_delay_in_us);
 
 /**
  * Description:
  * @param dutyCycle
  */
-void timer0SwPWM(uint8_t u8_dutyCycle,Freq u8_frequency);
+extern void timer0SwPWM(uint8_t u8_dutyCycle,Freq u8_frequency);
 
 
 

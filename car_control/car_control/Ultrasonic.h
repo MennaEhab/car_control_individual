@@ -10,7 +10,7 @@
 #define ULTRASONIC_H_
 
 
- uint16_t calculate(void) ;
-void ultrasonic_init(void);
+extern uint16_t calculate(void) ;
+extern uint16_t ultrasonic_init(void);
 
 #endif /* ULTRASONIC_H_ */
