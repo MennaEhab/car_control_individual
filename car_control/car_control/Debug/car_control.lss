@@ -786,6 +786,7 @@ ISR(INT2_vect){
  49c:	bf 93       	push	r27
  49e:	ef 93       	push	r30
  4a0:	ff 93       	push	r31
+	
 	//Led_Init(LED_1);
 	//Led_On(LED_1);
 	switch (flag){
@@ -831,8 +832,7 @@ void SwICU_Start(void){
 		break;
 		
 	}
-	
-	
+		
 }
  4ce:	ff 91       	pop	r31
  4d0:	ef 91       	pop	r30

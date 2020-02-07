@@ -18,6 +18,7 @@ static uint16_t TCNT_value = 0 ;
 
 
 ISR(INT2_vect){
+	
 	//Led_Init(LED_1);
 	//Led_On(LED_1);
 	switch (flag){
@@ -39,8 +40,7 @@ ISR(INT2_vect){
 		break;
 		
 	}
-	
-	
+		
 }
 
 void SwICU_Init(EN_SwICU_Edge_t a_en_inputCaptureEdge){
@@ -50,11 +50,11 @@ void SwICU_Init(EN_SwICU_Edge_t a_en_inputCaptureEdge){
 	// interrupt initialization
 	if(a_en_inputCaptureEdge == SwICU_EdgeRisiging){
 		
-		
 		MCUCSR |= 1<<6 ;
 		//
 		//Led_Init(LED_2);
 		//Led_On(LED_2) ;
+		
 		}
 	else 
 		
@@ -74,6 +74,7 @@ void SwICU_SetCfgEdge(EN_SwICU_Edge_t a_en_inputCaptureEdgeedge){
 		SET_BIT(INT2_EDGE_GPIO , INT2_EN_BIT);
 	else
 		CLEAR_BIT(INT2_EDGE_GPIO , INT2_EN_BIT);
+		
 }
 
 //read th TCNT
@@ -81,6 +82,7 @@ void SwICU_SetCfgEdge(EN_SwICU_Edge_t a_en_inputCaptureEdgeedge){
 void SwICU_Read(volatile uint8_t * a_pu8_capt){
 	
 	*(a_pu8_capt) = TCNT_value ;
+	
 }
 
 //stop timer
